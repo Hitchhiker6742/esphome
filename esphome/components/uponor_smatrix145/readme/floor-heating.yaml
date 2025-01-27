@@ -1,0 +1,160 @@
+esphome:
+  name: floor-heating
+  friendly_name: Floor Heating
+
+external_components:
+  - source:
+      type: local
+      path: custom
+
+esp32:
+  board: esp32dev
+  framework:
+    type: arduino    
+
+# Enable logging
+logger:
+  level: DEBUG #makes uart stream available in esphome logstream
+  baud_rate: 0 #disable logging over uart
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "dYV2JhTMkSGQP6w0hvIgZHiA3pKz+IUd0TXT55WJ+Jw="
+
+ota:
+  - platform: esphome
+    password: "63aea147fde87c978ac0823e9e3c28ce"
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Floor-Heating Fallback Hotspot"
+    password: "PrhK5QtiiUA5"
+
+captive_portal:
+       
+uart:
+  id: uart_bus
+  tx_pin: GPIO17
+  rx_pin: GPIO16
+  baud_rate: 19200
+  debug:
+    direction: TX
+    dummy_receiver: false
+    after:
+      delimiter: "\n"
+    sequence:
+      - lambda: UARTDebug::log_hex(direction, bytes, ' ');
+
+#time:
+#  - platform: homeassistant
+#    id: homeassistant_time
+
+uponor_smatrix145:         
+#  known addresses:
+#  0x1204 0x2CCC - I-143 Schaltuhr
+#  0x1104 0x497D - I-149 Thermonstat digital -> Wohnzimmer
+#  0x110E 0xB075 - I-149 Thermonstat digital -> Schlafzimmer
+#  0x110E 0xB09E - I-149 Thermonstat digital -> Bad
+#  0x1004 0x45F1 - I-144 Thermonstat analog -> Küche
+#  0x1004 0x45E8 - I-144 Thermonstat analog -> Computerzimmer
+#  0x1004 0x45EF - I-144 Thermonstat analog -> Flur
+#system address (only for correct run source code)
+  address: 0x1204 
+# set time to I-143 not working now
+#  time_id: homeassistant_time
+#  time_device_address: 0x2CCC
+
+sensor:
+  # - platform: uponor_smatrix145  
+  #   system_address: 0x1204
+  #   address: 0x2CCC
+
+  - platform: uponor_smatrix145      
+    system_address: 0x1108
+    address: 0x497D
+    humidity:
+      name: Humidity Wohnzimmer
+    temperature:
+      name: Temperature Wohnzimmer    
+    target_temperature:
+      name: Target Temperature Wohnzimmer
+
+  - platform: uponor_smatrix145
+    system_address: 0x110E
+    address: 0xB075
+    humidity:
+      name: Humidity Schlafzimmer
+    temperature:
+      name: Temperature Schlafzimmer
+    target_temperature:
+      name: Target Temperature Schlafzimmer
+  
+  - platform: uponor_smatrix145
+    system_address: 0x110E
+    address: 0xB09E
+    humidity:
+      name: Humidity Bad
+    temperature:
+      name: Temperature Bad
+    target_temperature:
+      name: Target Temperature Bad
+
+  - platform: uponor_smatrix145  
+    system_address: 0x1004
+    address: 0x45F1
+    temperature:
+      name: Temperature Küche
+    target_temperature:
+      name: Target Temperature Küche
+
+  - platform: uponor_smatrix145
+    system_address: 0x1004
+    address: 0x45E8
+    temperature:
+      name: Temperature Computerzimmer
+    target_temperature:
+      name: Target Temperature Computerzimmer
+   
+  - platform: uponor_smatrix145
+    system_address: 0x1004
+    address: 0x45EF
+    temperature:
+      name: Temperature Flur
+    target_temperature:
+      name: Target Temperature Flur
+
+climate: 
+  - platform: uponor_smatrix145  
+    system_address: 0x1108
+    address: 0x497D
+    name: Thermostat Wohnzimmer    
+
+  - platform: uponor_smatrix145
+    system_address: 0x110E
+    address: 0xB075
+    name: Thermostat Schlafzimmer
+  
+  - platform: uponor_smatrix145
+    system_address: 0x110E
+    address: 0xB09E
+    name: Thermostat Bad
+
+  # - platform: uponor_smatrix145  
+  #   system_address: 0x1004
+  #   address: 0x45F1
+  #   name: Thermostat Küche
+
+  # - platform: uponor_smatrix145  
+  #   system_address: 0x1004
+  #   address: 0x45E8
+  #   name: Thermostat Computerzimmer
+
+  # - platform: uponor_smatrix145  
+  #   system_address: 0x1004
+  #   address: 0x45EF
+  #   name: Thermostat Flur

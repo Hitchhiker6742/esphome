@@ -1,0 +1,1099 @@
+INFO ESPHome 2024.7.2
+INFO Reading configuration /config/esphome/floor-heating.yaml...
+INFO Generating C++ source...
+INFO Compiling app...
+Processing floor-heating (board: esp32dev; framework: arduino; platform: platformio/espressif32@5.4.0)
+--------------------------------------------------------------------------------
+Removing unused dependencies...
+Library Manager: Installing esphome/AsyncTCP-esphome @ 2.1.3
+INFO Installing esphome/AsyncTCP-esphome @ 2.1.3
+Unpacking  [####################################]  100%
+Library Manager: AsyncTCP-esphome@2.1.3 has been installed!
+INFO AsyncTCP-esphome@2.1.3 has been installed!
+Library Manager: Installing esphome/ESPAsyncWebServer-esphome @ 3.2.2
+INFO Installing esphome/ESPAsyncWebServer-esphome @ 3.2.2
+Unpacking  [####################################]  100%
+Library Manager: ESPAsyncWebServer-esphome@3.2.2 has been installed!
+INFO ESPAsyncWebServer-esphome@3.2.2 has been installed!
+Library Manager: Resolving dependencies...
+INFO Resolving dependencies...
+HARDWARE: ESP32 240MHz, 320KB RAM, 4MB Flash
+ - toolchain-xtensa-esp32 @ 8.4.0+2021r2-patch5
+Dependency Graph
+|-- AsyncTCP-esphome @ 2.1.3
+|-- WiFi @ 2.0.0
+|-- FS @ 2.0.0
+|-- Update @ 2.0.0
+|-- ESPAsyncWebServer-esphome @ 3.2.2
+|-- DNSServer @ 2.0.0
+|-- ESPmDNS @ 2.0.0
+|-- noise-c @ 0.1.4
+Compiling .pioenvs/floor-heating/src/esphome/components/api/api_connection.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/api/api_frame_helper.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/api/api_pb2.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/api/api_pb2_service.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/api/api_server.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/api/list_entities.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/api/proto.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/api/subscribe_state.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/api/user_services.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/captive_portal/captive_portal.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/climate/climate.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/climate/climate_mode.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/climate/climate_traits.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/custom/sensor/custom_sensor.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/esp32/core.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/esp32/gpio.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/esp32/preferences.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/esphome/ota/ota_esphome.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/logger/logger.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/logger/logger_esp32.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/logger/logger_esp8266.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/logger/logger_host.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/logger/logger_libretiny.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/logger/logger_rp2040.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/md5/md5.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/mdns/mdns_component.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/mdns/mdns_esp32.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/mdns/mdns_esp8266.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/mdns/mdns_host.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/mdns/mdns_libretiny.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/mdns/mdns_rp2040.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/network/util.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/ota/ota_backend.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/ota/ota_backend_arduino_esp32.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/ota/ota_backend_arduino_esp8266.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/ota/ota_backend_arduino_libretiny.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/ota/ota_backend_arduino_rp2040.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/ota/ota_backend_esp_idf.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/safe_mode/safe_mode.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/sensor/automation.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/sensor/filter.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/sensor/sensor.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/socket/bsd_sockets_impl.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/socket/lwip_raw_tcp_impl.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/socket/lwip_sockets_impl.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/socket/socket.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/uart/uart.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/uart/uart_component.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/uart/uart_component_esp32_arduino.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/uart/uart_component_esp8266.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/uart/uart_component_esp_idf.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/uart/uart_component_host.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/uart/uart_component_libretiny.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/uart/uart_component_rp2040.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/uart/uart_debugger.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/web_server_base/web_server_base.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/wifi/wifi_component.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/wifi/wifi_component_esp32_arduino.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/wifi/wifi_component_esp8266.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/wifi/wifi_component_esp_idf.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/wifi/wifi_component_libretiny.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/components/wifi/wifi_component_pico_w.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/core/application.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/core/color.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/core/component.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/core/component_iterator.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/core/controller.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/core/entity_base.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/core/helpers.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/core/log.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/core/ring_buffer.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/core/scheduler.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/core/string_ref.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/core/time.cpp.o
+Compiling .pioenvs/floor-heating/src/esphome/core/util.cpp.o
+Compiling .pioenvs/floor-heating/src/main.cpp.o
+Building .pioenvs/floor-heating/bootloader.bin
+Creating esp32 image...
+Successfully created esp32 image.
+Generating partitions .pioenvs/floor-heating/partitions.bin
+Compiling .pioenvs/floor-heating/libbdc/AsyncTCP-esphome/AsyncTCP.cpp.o
+Compiling .pioenvs/floor-heating/lib64d/WiFi/WiFi.cpp.o
+Compiling .pioenvs/floor-heating/lib64d/WiFi/WiFiAP.cpp.o
+Compiling .pioenvs/floor-heating/lib64d/WiFi/WiFiClient.cpp.o
+Archiving .pioenvs/floor-heating/libbdc/libAsyncTCP-esphome.a
+Compiling .pioenvs/floor-heating/lib64d/WiFi/WiFiGeneric.cpp.o
+Compiling .pioenvs/floor-heating/lib64d/WiFi/WiFiMulti.cpp.o
+Compiling .pioenvs/floor-heating/lib64d/WiFi/WiFiSTA.cpp.o
+Compiling .pioenvs/floor-heating/lib64d/WiFi/WiFiScan.cpp.o
+Compiling .pioenvs/floor-heating/lib64d/WiFi/WiFiServer.cpp.o
+Compiling .pioenvs/floor-heating/lib64d/WiFi/WiFiUdp.cpp.o
+Compiling .pioenvs/floor-heating/lib01c/FS/FS.cpp.o
+Compiling .pioenvs/floor-heating/lib01c/FS/vfs_api.cpp.o
+Compiling .pioenvs/floor-heating/libbc6/Update/HttpsOTAUpdate.cpp.o
+Compiling .pioenvs/floor-heating/libbc6/Update/Updater.cpp.o
+Archiving .pioenvs/floor-heating/lib64d/libWiFi.a
+Compiling .pioenvs/floor-heating/lib31d/ESPAsyncWebServer-esphome/AsyncEventSource.cpp.o
+Compiling .pioenvs/floor-heating/lib31d/ESPAsyncWebServer-esphome/AsyncWebSocket.cpp.o
+Archiving .pioenvs/floor-heating/lib01c/libFS.a
+Compiling .pioenvs/floor-heating/lib31d/ESPAsyncWebServer-esphome/WebAuthentication.cpp.o
+Archiving .pioenvs/floor-heating/libbc6/libUpdate.a
+Compiling .pioenvs/floor-heating/lib31d/ESPAsyncWebServer-esphome/WebHandlers.cpp.o
+Compiling .pioenvs/floor-heating/lib31d/ESPAsyncWebServer-esphome/WebRequest.cpp.o
+Compiling .pioenvs/floor-heating/lib31d/ESPAsyncWebServer-esphome/WebResponses.cpp.o
+Compiling .pioenvs/floor-heating/lib31d/ESPAsyncWebServer-esphome/WebServer.cpp.o
+Compiling .pioenvs/floor-heating/lib333/DNSServer/DNSServer.cpp.o
+Compiling .pioenvs/floor-heating/lib915/ESPmDNS/ESPmDNS.cpp.o
+Archiving .pioenvs/floor-heating/lib31d/libESPAsyncWebServer-esphome.a
+Archiving .pioenvs/floor-heating/lib333/libDNSServer.a
+Compiling .pioenvs/floor-heating/libd9e/libsodium/crypto_aead/chacha20poly1305/sodium/aead_chacha20poly1305.c.o
+Compiling .pioenvs/floor-heating/libd9e/libsodium/crypto_core/ed25519/core_ed25519.c.o
+Compiling .pioenvs/floor-heating/libd9e/libsodium/crypto_core/ed25519/core_ristretto255.c.o
+Compiling .pioenvs/floor-heating/libd9e/libsodium/crypto_core/ed25519/ref10/ed25519_ref10.c.o
+Compiling .pioenvs/floor-heating/libd9e/libsodium/crypto_hash/crypto_hash.c.o
+Compiling .pioenvs/floor-heating/libd9e/libsodium/crypto_hash/sha256/cp/hash_sha256_cp.c.o
+Compiling .pioenvs/floor-heating/libd9e/libsodium/crypto_hash/sha256/hash_sha256.c.o
+Compiling .pioenvs/floor-heating/libd9e/libsodium/crypto_onetimeauth/crypto_onetimeauth.c.o
+Compiling .pioenvs/floor-heating/libd9e/libsodium/crypto_onetimeauth/poly1305/donna/poly1305_donna.c.o
+Compiling .pioenvs/floor-heating/libd9e/libsodium/crypto_onetimeauth/poly1305/onetimeauth_poly1305.c.o
+Compiling .pioenvs/floor-heating/libd9e/libsodium/crypto_scalarmult/crypto_scalarmult.c.o
+Compiling .pioenvs/floor-heating/libd9e/libsodium/crypto_scalarmult/curve25519/ref10/x25519_ref10.c.o
+Compiling .pioenvs/floor-heating/libd9e/libsodium/crypto_scalarmult/curve25519/scalarmult_curve25519.c.o
+Compiling .pioenvs/floor-heating/libd9e/libsodium/crypto_stream/chacha20/ref/chacha20_ref.c.o
+Archiving .pioenvs/floor-heating/lib915/libESPmDNS.a
+Compiling .pioenvs/floor-heating/libd9e/libsodium/crypto_stream/chacha20/stream_chacha20.c.o
+Compiling .pioenvs/floor-heating/libd9e/libsodium/crypto_stream/crypto_stream.c.o
+Compiling .pioenvs/floor-heating/libd9e/libsodium/crypto_verify/sodium/verify.c.o
+Compiling .pioenvs/floor-heating/libd9e/libsodium/sodium/codecs.c.o
+Compiling .pioenvs/floor-heating/libd9e/libsodium/sodium/core.c.o
+Compiling .pioenvs/floor-heating/libd9e/libsodium/sodium/runtime.c.o
+Compiling .pioenvs/floor-heating/libd9e/libsodium/sodium/utils.c.o
+Compiling .pioenvs/floor-heating/lib401/noise-c/backend/openssl/cipher-aesgcm.c.o
+Compiling .pioenvs/floor-heating/lib401/noise-c/backend/ref/cipher-aesgcm.c.o
+Compiling .pioenvs/floor-heating/lib401/noise-c/backend/ref/cipher-chachapoly.c.o
+Compiling .pioenvs/floor-heating/lib401/noise-c/backend/ref/dh-curve25519.c.o
+Compiling .pioenvs/floor-heating/lib401/noise-c/backend/ref/hash-blake2b.c.o
+Compiling .pioenvs/floor-heating/lib401/noise-c/backend/ref/hash-blake2s.c.o
+Compiling .pioenvs/floor-heating/lib401/noise-c/backend/ref/hash-sha256.c.o
+Compiling .pioenvs/floor-heating/lib401/noise-c/backend/sodium/cipher-aesgcm.c.o
+Compiling .pioenvs/floor-heating/lib401/noise-c/backend/sodium/cipher-chachapoly.c.o
+Compiling .pioenvs/floor-heating/lib401/noise-c/backend/sodium/dh-curve25519.c.o
+Compiling .pioenvs/floor-heating/lib401/noise-c/backend/sodium/hash-blake2b.c.o
+Compiling .pioenvs/floor-heating/lib401/noise-c/backend/sodium/hash-sha256.c.o
+Compiling .pioenvs/floor-heating/lib401/noise-c/crypto/aes/rijndael-alg-fst.c.o
+Compiling .pioenvs/floor-heating/lib401/noise-c/crypto/blake2/blake2b.c.o
+Compiling .pioenvs/floor-heating/lib401/noise-c/crypto/blake2/blake2s.c.o
+Compiling .pioenvs/floor-heating/lib401/noise-c/crypto/chacha/chacha.c.o
+Compiling .pioenvs/floor-heating/lib401/noise-c/crypto/donna/curve25519-donna-c64.c.o
+Compiling .pioenvs/floor-heating/lib401/noise-c/crypto/donna/curve25519-donna.c.o
+Compiling .pioenvs/floor-heating/lib401/noise-c/crypto/donna/poly1305-donna.c.o
+Compiling .pioenvs/floor-heating/lib401/noise-c/crypto/sha2/sha256.c.o
+Compiling .pioenvs/floor-heating/lib401/noise-c/crypto/sha2/sha512.c.o
+Compiling .pioenvs/floor-heating/lib401/noise-c/crypto/x25519/x25519.c.o
+Compiling .pioenvs/floor-heating/lib401/noise-c/protocol/cipherstate.c.o
+Compiling .pioenvs/floor-heating/lib401/noise-c/protocol/dhstate.c.o
+Compiling .pioenvs/floor-heating/lib401/noise-c/protocol/errors.c.o
+Compiling .pioenvs/floor-heating/lib401/noise-c/protocol/handshakestate.c.o
+Compiling .pioenvs/floor-heating/lib401/noise-c/protocol/hashstate.c.o
+Compiling .pioenvs/floor-heating/lib401/noise-c/protocol/internal.c.o
+Compiling .pioenvs/floor-heating/lib401/noise-c/protocol/names.c.o
+Compiling .pioenvs/floor-heating/lib401/noise-c/protocol/patterns.c.o
+Compiling .pioenvs/floor-heating/lib401/noise-c/protocol/rand_os.c.o
+Compiling .pioenvs/floor-heating/lib401/noise-c/protocol/rand_sodium.c.o
+Compiling .pioenvs/floor-heating/lib401/noise-c/protocol/randstate.c.o
+Compiling .pioenvs/floor-heating/lib401/noise-c/protocol/signstate.c.o
+Compiling .pioenvs/floor-heating/lib401/noise-c/protocol/symmetricstate.c.o
+Compiling .pioenvs/floor-heating/lib401/noise-c/protocol/util.c.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/Esp.cpp.o
+Archiving .pioenvs/floor-heating/lib401/libnoise-c.a
+Compiling .pioenvs/floor-heating/FrameworkArduino/FirmwareMSC.cpp.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/FunctionalInterrupt.cpp.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/HWCDC.cpp.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/HardwareSerial.cpp.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/IPAddress.cpp.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/IPv6Address.cpp.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/MD5Builder.cpp.o
+Archiving .pioenvs/floor-heating/libd9e/libsodium.a
+Compiling .pioenvs/floor-heating/FrameworkArduino/Print.cpp.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/Stream.cpp.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/StreamString.cpp.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/Tone.cpp.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/USB.cpp.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/USBCDC.cpp.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/USBMSC.cpp.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/WMath.cpp.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/WString.cpp.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/base64.cpp.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/cbuf.cpp.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/esp32-hal-adc.c.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/esp32-hal-bt.c.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/esp32-hal-cpu.c.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/esp32-hal-dac.c.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/esp32-hal-gpio.c.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/esp32-hal-i2c-slave.c.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/esp32-hal-i2c.c.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/esp32-hal-ledc.c.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/esp32-hal-matrix.c.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/esp32-hal-misc.c.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/esp32-hal-psram.c.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/esp32-hal-rgb-led.c.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/esp32-hal-rmt.c.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/esp32-hal-sigmadelta.c.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/esp32-hal-spi.c.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/esp32-hal-time.c.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/esp32-hal-timer.c.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/esp32-hal-tinyusb.c.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/esp32-hal-touch.c.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/esp32-hal-uart.c.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/firmware_msc_fat.c.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/libb64/cdecode.c.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/libb64/cencode.c.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/main.cpp.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/stdlib_noniso.c.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/wiring_pulse.c.o
+Compiling .pioenvs/floor-heating/FrameworkArduino/wiring_shift.c.o
+Archiving .pioenvs/floor-heating/libFrameworkArduino.a
+Linking .pioenvs/floor-heating/firmware.elf
+RAM:   [=         ]  12.4% (used 40736 bytes from 327680 bytes)
+Flash: [=====     ]  51.0% (used 936289 bytes from 1835008 bytes)
+Building .pioenvs/floor-heating/firmware.bin
+Creating esp32 image...
+Successfully created esp32 image.
+esp32_create_combined_bin([".pioenvs/floor-heating/firmware.bin"], [".pioenvs/floor-heating/firmware.elf"])
+Wrote 0xf5ff0 bytes to file /data/build/floor-heating/.pioenvs/floor-heating/firmware.factory.bin, ready to flash to offset 0x0
+esp32_copy_ota_bin([".pioenvs/floor-heating/firmware.bin"], [".pioenvs/floor-heating/firmware.elf"])
+======================== [SUCCESS] Took 156.79 seconds ========================
+INFO Successfully compiled program.
+INFO Connecting to 192.168.178.58
+INFO Uploading /data/build/floor-heating/.pioenvs/floor-heating/firmware.bin (942064 bytes)
+Uploading: [============================================================] 100% Done...
+
+INFO Upload took 8.14 seconds, waiting for result...
+INFO OTA successful
+INFO Successfully uploaded program.
+INFO Starting log output from 192.168.178.58 using esphome API
+INFO Successfully connected to floor-heating @ 192.168.178.58 in 7.246s
+INFO Successful handshake with floor-heating @ 192.168.178.58 in 0.120s
+[23:18:38][I][app:100]: ESPHome version 2024.7.2 compiled on Aug  3 2024, 23:16:58
+[23:18:38][C][wifi:599]: WiFi:
+[23:18:38][C][wifi:427]:   Local MAC: A8:42:E3:A9:F3:40
+[23:18:38][C][wifi:432]:   SSID: 'Per Anhalter durch die Galaxis'[redacted]
+[23:18:38][C][wifi:435]:   IP Address: 192.168.178.58
+[23:18:38][C][wifi:439]:   BSSID: 50:E6:36:3A:F7:98[redacted]
+[23:18:38][C][wifi:440]:   Hostname: 'floor-heating'
+[23:18:38][C][wifi:442]:   Signal strength: -52 dB ▂▄▆█
+[23:18:38][C][wifi:446]:   Channel: 1
+[23:18:38][C][wifi:447]:   Subnet: 255.255.255.0
+[23:18:38][C][wifi:448]:   Gateway: 192.168.178.1
+[23:18:38][C][wifi:449]:   DNS1: 192.168.178.1
+[23:18:38][C][wifi:450]:   DNS2: 0.0.0.0
+[23:18:38][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][component:237]: Component custom_component took a long time for an operation (192 ms).
+[23:18:38][W][component:238]: Components should block for at most 30 ms.
+[23:18:38][C][logger:185]: Logger:
+[23:18:38][C][logger:186]:   Level: DEBUG
+[23:18:38][C][logger:188]:   Log Baud Rate: 0
+[23:18:38][C][uart.arduino_esp32:151]: UART Bus 0:
+[23:18:38][C][uart.arduino_esp32:152]:   TX Pin: GPIO17
+[23:18:38][C][uart.arduino_esp32:153]:   RX Pin: GPIO16
+[23:18:38][C][uart.arduino_esp32:155]:   RX Buffer Size: 256
+[23:18:38][C][uart.arduino_esp32:157]:   Baud Rate: 19200 baud
+[23:18:38][C][uart.arduino_esp32:158]:   Data Bits: 8
+[23:18:38][C][uart.arduino_esp32:159]:   Parity: NONE
+[23:18:38][C][uart.arduino_esp32:160]:   Stop bits: 1
+[23:18:38][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:38][W][uponor:112]: >>> 
+[23:18:38][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][C][captive_portal:088]: Captive Portal:
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:39][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:39][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0
+[23:18:40][W][uponor:112]: >>> 
+[23:18:40][W][uponor:067]: Wrong data! Packet size: 0

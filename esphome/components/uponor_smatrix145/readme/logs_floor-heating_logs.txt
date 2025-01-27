@@ -1,0 +1,165 @@
+INFO ESPHome 2024.7.2
+INFO Reading configuration /config/esphome/floor-heating.yaml...
+INFO Starting log output from 192.168.178.58 using esphome API
+INFO Successfully connected to floor-heating @ 192.168.178.58 in 0.109s
+INFO Successful handshake with floor-heating @ 192.168.178.58 in 0.087s
+[19:38:34][I][app:100]: ESPHome version 2024.7.2 compiled on Aug  3 2024, 19:33:04
+[19:38:34][C][wifi:599]: WiFi:
+[19:38:34][C][wifi:427]:   Local MAC: A8:42:E3:A9:F3:40
+[19:38:34][C][wifi:432]:   SSID: 'Per Anhalter durch die Galaxis'[redacted]
+[19:38:34][C][wifi:435]:   IP Address: 192.168.178.58
+[19:38:34][C][wifi:439]:   BSSID: 50:E6:36:3A:F7:98[redacted]
+[19:38:34][C][wifi:440]:   Hostname: 'floor-heating'
+[19:38:34][C][wifi:442]:   Signal strength: -51 dB ▂▄▆█
+[19:38:34][C][wifi:446]:   Channel: 1
+[19:38:34][C][wifi:447]:   Subnet: 255.255.255.0
+[19:38:34][C][wifi:448]:   Gateway: 192.168.178.1
+[19:38:34][C][wifi:449]:   DNS1: 192.168.178.1
+[19:38:34][C][wifi:450]:   DNS2: 0.0.0.0
+[19:38:34][W][uponor_smatrix:111]: Received packet from unknown system address 0x1004
+[19:38:34][W][uponor_smatrix:111]: Received packet from unknown system address 0x1004
+[19:38:34][C][logger:185]: Logger:
+[19:38:34][C][logger:186]:   Level: DEBUG
+[19:38:34][C][logger:188]:   Log Baud Rate: 0
+[19:38:34][C][logger:189]:   Hardware UART: UART0
+[19:38:34][W][uponor_smatrix:111]: Received packet from unknown system address 0x1004
+[19:38:34][C][uart.arduino_esp32:151]: UART Bus 0:
+[19:38:34][C][uart.arduino_esp32:152]:   TX Pin: GPIO17
+[19:38:34][C][uart.arduino_esp32:153]:   RX Pin: GPIO16
+[19:38:34][C][uart.arduino_esp32:155]:   RX Buffer Size: 256
+[19:38:34][C][uart.arduino_esp32:157]:   Baud Rate: 19200 baud
+[19:38:34][C][uart.arduino_esp32:158]:   Data Bits: 8
+[19:38:34][C][uart.arduino_esp32:159]:   Parity: NONE
+[19:38:34][C][uart.arduino_esp32:160]:   Stop bits: 1
+[19:38:34][C][uponor_smatrix:018]: Uponor Smatrix
+[19:38:34][C][uponor_smatrix:019]:   System address: 0x110E
+[19:38:34][C][uponor_smatrix.climate:011]: Uponor Smatrix Climate 'Test0xB075'
+[19:38:34][C][uponor_smatrix.climate:012]:   Device address: 0xB075
+[19:38:34][C][uponor_smatrix.climate:011]: Uponor Smatrix Climate 'Test0xB09E'
+[19:38:34][C][uponor_smatrix.climate:012]:   Device address: 0xB09E
+[19:38:34][C][uponor_smatrix.sensor:010]: Uponor Smatrix Sensor
+[19:38:34][C][uponor_smatrix.sensor:011]:   Device address: 0xB075
+[19:38:34][C][uponor_smatrix.sensor:012]:   Temperature 'Temperature 0xB075'
+[19:38:34][C][uponor_smatrix.sensor:012]:     Device Class: 'temperature'
+[19:38:34][C][uponor_smatrix.sensor:012]:     State Class: 'measurement'
+[19:38:34][C][uponor_smatrix.sensor:012]:     Unit of Measurement: '°C'
+[19:38:34][C][uponor_smatrix.sensor:012]:     Accuracy Decimals: 1
+[19:38:34][C][uponor_smatrix.sensor:014]:   Humidity 'Humidity 0xB075'
+[19:38:34][C][uponor_smatrix.sensor:014]:     Device Class: 'humidity'
+[19:38:34][C][uponor_smatrix.sensor:014]:     State Class: 'measurement'
+[19:38:34][C][uponor_smatrix.sensor:014]:     Unit of Measurement: '%'
+[19:38:34][C][uponor_smatrix.sensor:014]:     Accuracy Decimals: 0
+[19:38:34][C][uponor_smatrix.sensor:010]: Uponor Smatrix Sensor
+[19:38:34][C][uponor_smatrix.sensor:011]:   Device address: 0xB09E
+[19:38:34][C][uponor_smatrix.sensor:012]:   Temperature 'Temperature 0xB09E'
+[19:38:34][C][uponor_smatrix.sensor:012]:     Device Class: 'temperature'
+[19:38:34][C][uponor_smatrix.sensor:012]:     State Class: 'measurement'
+[19:38:34][C][uponor_smatrix.sensor:012]:     Unit of Measurement: '°C'
+[19:38:34][C][uponor_smatrix.sensor:012]:     Accuracy Decimals: 1
+[19:38:34][C][uponor_smatrix.sensor:014]:   Humidity 'Humidity 0xB09E'
+[19:38:34][C][uponor_smatrix.sensor:014]:     Device Class: 'humidity'
+[19:38:34][C][uponor_smatrix.sensor:014]:     State Class: 'measurement'
+[19:38:34][C][uponor_smatrix.sensor:014]:     Unit of Measurement: '%'
+[19:38:34][C][uponor_smatrix.sensor:014]:     Accuracy Decimals: 0
+[19:38:34][W][uponor_smatrix:111]: Received packet from unknown system address 0x1108
+[19:38:34][W][uponor_smatrix:111]: Received packet from unknown system address 0x1108
+[19:38:34][C][captive_portal:088]: Captive Portal:
+[19:38:34][C][mdns:116]: mDNS:
+[19:38:34][C][mdns:117]:   Hostname: floor-heating
+[19:38:34][W][uponor_smatrix:111]: Received packet from unknown system address 0x1108
+[19:38:34][C][esphome.ota:073]: Over-The-Air updates:
+[19:38:34][C][esphome.ota:074]:   Address: floor-heating.local:3232
+[19:38:34][C][esphome.ota:075]:   Version: 2
+[19:38:34][C][esphome.ota:078]:   Password configured
+[19:38:34][C][safe_mode:018]: Safe Mode:
+[19:38:34][C][safe_mode:020]:   Boot considered successful after 60 seconds
+[19:38:34][C][safe_mode:021]:   Invoke after 10 boot attempts
+[19:38:34][C][safe_mode:023]:   Remain in safe mode for 300 seconds
+[19:38:34][C][api:139]: API Server:
+[19:38:34][C][api:140]:   Address: floor-heating.local:6053
+[19:38:34][C][api:142]:   Using noise encryption: YES
+[19:38:34][W][uponor_smatrix:111]: Received packet from unknown system address 0x1204
+[19:38:34][W][uponor_smatrix:111]: Received packet from unknown system address 0x1204
+[19:38:34][W][uponor_smatrix:111]: Received packet from unknown system address 0x1204
+[19:38:34][W][uponor_smatrix:111]: Received packet from unknown system address 0x1004
+[19:38:34][W][uponor_smatrix:111]: Received packet from unknown system address 0x1004
+[19:38:34][W][uponor_smatrix:111]: Received packet from unknown system address 0x1004
+[19:38:34][D][sensor:094]: 'Temperature 0xB075': Sending state 24.83333 °C with 1 decimals of accuracy
+[19:38:34][D][sensor:094]: 'Humidity 0xB075': Sending state 47.00000 % with 0 decimals of accuracy
+[19:38:34][D][climate:396]: 'Test0xB075' - Sending state:
+[19:38:34][D][climate:399]:   Mode: HEAT
+[19:38:34][D][climate:401]:   Action: IDLE
+[19:38:34][D][climate:410]:   Preset: NONE
+[19:38:34][D][climate:419]:   Current Temperature: 24.83°C
+[19:38:34][D][climate:425]:   Target Temperature: 18.00°C
+[19:38:34][D][climate:428]:   Current Humidity: 47%
+[19:38:34][W][uponor_smatrix:111]: Received packet from unknown system address 0x1004
+[19:38:34][W][uponor_smatrix:111]: Received packet from unknown system address 0x1004
+[19:38:34][W][uponor_smatrix:111]: Received packet from unknown system address 0x1004
+[19:38:35][D][sensor:094]: 'Temperature 0xB09E': Sending state 25.50000 °C with 1 decimals of accuracy
+[19:38:35][D][sensor:094]: 'Humidity 0xB09E': Sending state 49.00000 % with 0 decimals of accuracy
+[19:38:35][D][climate:396]: 'Test0xB09E' - Sending state:
+[19:38:35][D][climate:399]:   Mode: HEAT
+[19:38:35][D][climate:401]:   Action: IDLE
+[19:38:35][D][climate:410]:   Preset: NONE
+[19:38:35][D][climate:419]:   Current Temperature: 25.50°C
+[19:38:35][D][climate:425]:   Target Temperature: 19.50°C
+[19:38:35][D][climate:428]:   Current Humidity: 49%
+[19:38:35][W][uponor_smatrix:111]: Received packet from unknown system address 0x1004
+[19:38:35][W][uponor_smatrix:111]: Received packet from unknown system address 0x1004
+[19:38:35][W][uponor_smatrix:111]: Received packet from unknown system address 0x1004
+[19:38:35][W][uponor_smatrix:111]: Received packet from unknown system address 0x1204
+[19:38:35][W][uponor_smatrix:111]: Received packet from unknown system address 0x1204
+[19:38:35][D][uponor_smatrix:042]: Discarding 10 bytes of unparsed data
+[19:38:35][W][uponor_smatrix:111]: Received packet from unknown system address 0x1108
+[19:38:35][W][uponor_smatrix:111]: Received packet from unknown system address 0x1108
+[19:38:35][W][uponor_smatrix:111]: Received packet from unknown system address 0x1108
+[19:38:35][W][uponor_smatrix:111]: Received packet from unknown system address 0x1004
+[19:38:35][W][uponor_smatrix:111]: Received packet from unknown system address 0x1004
+[19:38:35][W][uponor_smatrix:111]: Received packet from unknown system address 0x1004
+[19:38:35][D][sensor:094]: 'Temperature 0xB075': Sending state 24.83333 °C with 1 decimals of accuracy
+[19:38:35][D][sensor:094]: 'Humidity 0xB075': Sending state 47.00000 % with 0 decimals of accuracy
+[19:38:36][D][climate:396]: 'Test0xB075' - Sending state:
+[19:38:36][D][climate:399]:   Mode: HEAT
+[19:38:36][D][climate:401]:   Action: IDLE
+[19:38:36][D][climate:410]:   Preset: NONE
+[19:38:36][D][climate:419]:   Current Temperature: 24.83°C
+[19:38:36][D][climate:425]:   Target Temperature: 18.00°C
+[19:38:36][D][climate:428]:   Current Humidity: 47%
+[19:38:36][W][uponor_smatrix:111]: Received packet from unknown system address 0x1004
+[19:38:36][W][uponor_smatrix:111]: Received packet from unknown system address 0x1004
+[19:38:36][W][uponor_smatrix:111]: Received packet from unknown system address 0x1004
+[19:38:36][D][sensor:094]: 'Temperature 0xB09E': Sending state 25.50000 °C with 1 decimals of accuracy
+[19:38:36][D][sensor:094]: 'Humidity 0xB09E': Sending state 49.00000 % with 0 decimals of accuracy
+[19:38:36][D][climate:396]: 'Test0xB09E' - Sending state:
+[19:38:36][D][climate:399]:   Mode: HEAT
+[19:38:36][D][climate:401]:   Action: IDLE
+[19:38:36][D][climate:410]:   Preset: NONE
+[19:38:36][D][climate:419]:   Current Temperature: 25.50°C
+[19:38:36][D][climate:425]:   Target Temperature: 19.50°C
+[19:38:36][D][climate:428]:   Current Humidity: 49%
+[19:38:36][W][uponor_smatrix:111]: Received packet from unknown system address 0x1204
+[19:38:36][W][uponor_smatrix:111]: Received packet from unknown system address 0x1204
+[19:38:36][W][uponor_smatrix:111]: Received packet from unknown system address 0x1204
+[19:38:36][W][uponor_smatrix:111]: Received packet from unknown system address 0x1004
+[19:38:36][W][uponor_smatrix:111]: Received packet from unknown system address 0x1004
+[19:38:36][W][uponor_smatrix:111]: Received packet from unknown system address 0x1004
+[19:38:36][W][uponor_smatrix:111]: Received packet from unknown system address 0x1108
+[19:38:36][W][uponor_smatrix:111]: Received packet from unknown system address 0x1108
+[19:38:36][W][uponor_smatrix:111]: Received packet from unknown system address 0x1108
+[19:38:36][W][uponor_smatrix:111]: Received packet from unknown system address 0x1004
+[19:38:36][W][uponor_smatrix:111]: Received packet from unknown system address 0x1004
+[19:38:36][W][uponor_smatrix:111]: Received packet from unknown system address 0x1004
+[19:38:37][D][sensor:094]: 'Temperature 0xB075': Sending state 24.83333 °C with 1 decimals of accuracy
+[19:38:37][D][sensor:094]: 'Humidity 0xB075': Sending state 47.00000 % with 0 decimals of accuracy
+[19:38:37][D][climate:396]: 'Test0xB075' - Sending state:
+[19:38:37][D][climate:399]:   Mode: HEAT
+[19:38:37][D][climate:401]:   Action: IDLE
+[19:38:37][D][climate:410]:   Preset: NONE
+[19:38:37][D][climate:419]:   Current Temperature: 24.83°C
+[19:38:37][D][climate:425]:   Target Temperature: 18.00°C
+[19:38:37][D][climate:428]:   Current Humidity: 47%
+[19:38:37][W][uponor_smatrix:111]: Received packet from unknown system address 0x1004
+[19:38:37][W][uponor_smatrix:111]: Received packet from unknown system address 0x1004
+[19:38:37][W][uponor_smatrix:111]: Received packet from unknown system address 0x1004
+[19:38:37][W][uponor_smatrix:111]: Received packet from unknown system address 0x1204
