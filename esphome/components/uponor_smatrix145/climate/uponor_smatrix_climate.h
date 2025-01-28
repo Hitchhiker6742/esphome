@@ -25,8 +25,12 @@ class UponorSmatrixClimate : public climate::Climate, public Component, public U
   uint16_t eco_setback_value_raw_{0x0000};
   uint16_t target_temperature_raw_;
   uint16_t lastset_target_temperature_raw_;
-  float lastset_target_temperature_;  
+  float lastset_target_temperature_{0.0f};  
   uint8_t send_retry_count_;  
+
+private:
+  void send_data(float temperature, bool retry);
+  optional<climate::ClimatePreset> last_preset_;
 };
 
 }  // namespace uponor_smatrix145
