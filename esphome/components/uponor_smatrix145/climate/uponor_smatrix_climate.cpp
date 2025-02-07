@@ -17,7 +17,8 @@ void UponorSmatrixClimate::loop() {
 
   // Publish state after all update packets are processed
   if (this->last_data_ != 0 && (now - this->last_data_ > 100) && this->target_temperature_raw_ != 0) {
-    float temp = raw_to_celsius((this->preset == climate::CLIMATE_PRESET_ECO)
+    //float temp = raw_to_celsius((this->preset == climate::CLIMATE_PRESET_ECO)
+    float temp = raw_to_celsius((gbl_timer_eco_mode == ECO_PRESET_ON)   
                                      ? (this->target_temperature_raw_ - this->eco_setback_value_raw_)
                                      : this->target_temperature_raw_);
     //float temp = raw_to_celsius(this->target_temperature_raw_);
@@ -58,15 +59,15 @@ void UponorSmatrixClimate::control(const climate::ClimateCall &call) {
     // ESP_LOGI(TAG, "Send Data for target temperature");
 	  // this->send(data, sizeof(data) / sizeof(data[0]));
   // }
-  if (call.get_preset().has_value()) {
-	  ESP_LOGI(TAG, "GetPreset %d", *call.get_preset());  
-	  this->set_preset_(*call.get_preset());
-    if (this->last_preset_ != this->preset && this->lastset_target_temperature_ != 0.0f)
-    {
-      this->last_preset_ = this->preset;
-      send_data(this->lastset_target_temperature_, false);
-    }
-  }
+  // if (call.get_preset().has_value()) {
+	//   ESP_LOGI(TAG, "GetPreset %d", *call.get_preset());  
+	//   this->set_preset_(*call.get_preset());
+  //   if (this->last_preset_ != this->preset && this->lastset_target_temperature_ != 0.0f)
+  //   {
+  //     this->last_preset_ = this->preset;
+  //     send_data(this->lastset_target_temperature_, false);
+  //   }
+  // }
 
   if (call.get_target_temperature().has_value()) {    
     ESP_LOGI(TAG, "GetTargetTemperature %d", *call.get_target_temperature());  
@@ -90,7 +91,9 @@ void UponorSmatrixClimate::send_data(float temperature, bool retry = false)
   ESP_LOGI(TAG, "Send Temperature %f", temperature);  
   this->lastset_target_temperature_ = temperature;
   uint16_t temp = celsius_to_raw(temperature);
-  if (this->preset == climate::CLIMATE_PRESET_ECO) {
+  //if (this->preset == climate::CLIMATE_PRESET_ECO) {
+  if (gbl_timer_eco_mode == ECO_PRESET_ON) 
+  {
     // During ECO mode, the thermostat automatically substracts the setback value from the setpoint,
     // so we need to add it here first
     temp += this->eco_setback_value_raw_;
@@ -118,7 +121,10 @@ void UponorSmatrixClimate::on_device_data(const UponorSmatrixData *data, size_t 
         // thermostat
         if (data[i].value != UPONOR_INVALID_VALUE) {
           this->target_temperature_raw_ = data[i].value;
-          float temp = raw_to_celsius((this->preset == climate::CLIMATE_PRESET_ECO)
+          // float temp = raw_to_celsius((this->preset == climate::CLIMATE_PRESET_ECO)
+          //                               ? (this->target_temperature_raw_ - this->eco_setback_value_raw_)
+          //                               : this->target_temperature_raw_);                                                            
+          float temp = raw_to_celsius((gbl_timer_eco_mode == ECO_PRESET_ON)
                                         ? (this->target_temperature_raw_ - this->eco_setback_value_raw_)
                                         : this->target_temperature_raw_);                                                            
           //Set if never was set by control to device value
@@ -146,6 +152,16 @@ void UponorSmatrixClimate::on_device_data(const UponorSmatrixData *data, size_t 
         }
         break;
       case UPONOR_ID_MODE1:		
+        if (this->last_timer_eco_mode != gbl_timer_eco_mode)
+        {
+          this->last_timer_eco_mode == gbl_timer_eco_mode;
+          if (gbl_timer_eco_mode == ECO_PRESET_ON)
+            this->set_preset_(climate::CLIMATE_PRESET_ECO);
+          else
+            this->set_preset_(climate::CLIMATE_PRESET_NONE);
+
+          send_data(this->lastset_target_temperature_, true);
+        }
 		// if (this->preset == climate::CLIMATE_PRESET_ECO) {       
 			// ESP_LOGD(TAG, "Preset climate::CLIMATE_PRESET_ECO");
 		// }

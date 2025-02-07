@@ -6,6 +6,8 @@ namespace uponor_smatrix145 {
 
 static const char *const TAG = "uponor_smatrix145";
 
+uint8_t gbl_timer_eco_mode = ECO_PRESET_OFF;
+
 void UponorSmatrixComponent::setup() {
 #ifdef USE_TIME
   if (this->time_id_ != nullptr) {

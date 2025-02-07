@@ -138,5 +138,10 @@ inline uint16_t celsius_to_raw(float celsius) {
                              : static_cast<uint16_t>(lroundf(celsius_to_fahrenheit(celsius) * 10.0f));
 }
 
+static const uint8_t ECO_PRESET_UNDEFINED = 0xFF;
+static const uint8_t ECO_PRESET_ON = 0x01;
+static const uint8_t ECO_PRESET_OFF = 0x00;
+extern uint8_t gbl_timer_eco_mode;
+
 }  // namespace uponor_smatrix145
 }  // namespace esphome

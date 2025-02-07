@@ -33,18 +33,18 @@ void UponorSmatrixSensor::on_device_data(const UponorSmatrixData *data, size_t d
         break;
       case UPONOR_ID_TARGET_TEMP:
 		    this->target_temperature_ = raw_to_celsius(data[i].value);
-        if (this->target_temperature_sensor_ != nullptr) 
+        if (this->target_temperature_brutto_sensor_ != nullptr) 
         {
-		      this->target_temperature_sensor_->publish_state(this->target_temperature_);
+		      this->target_temperature_brutto_sensor_->publish_state(this->target_temperature_);
 		    }
-  		  if (this->target_temperature_brutto_sensor_ != nullptr) 
+  		  if (this->target_temperature_sensor_ != nullptr) 
         {
-          if (this->climate_preset_mode_ == climate::CLIMATE_PRESET_ECO) 
+          if (this->climate_preset_mode_ == ECO_PRESET_ON) 
             // During ECO mode, the thermostat automatically substracts the setback value from the setpoint,
             // so we need to add it here first
-            this->target_temperature_brutto_sensor_->publish_state(this->target_temperature_ += this->eco_setback_);		    
+            this->target_temperature_sensor_->publish_state(this->target_temperature_ -= this->eco_setback_);		    
           else
-            this->target_temperature_brutto_sensor_->publish_state(this->target_temperature_);
+            this->target_temperature_sensor_->publish_state(this->target_temperature_);
         }
         break;
       case UPONOR_ID_TARGET_TEMP_MIN:
@@ -128,7 +128,8 @@ void UponorSmatrixSensor::on_device_data(const UponorSmatrixData *data, size_t d
 			this->eco_setback_sensor_->publish_state(this->eco_setback_);
         break;		
       case UPONOR_ID_MODE1:
-	    this->climate_preset_mode_ = ((data[i].value & 0x0008) == 0x0008) ? climate::CLIMATE_PRESET_ECO : climate::CLIMATE_PRESET_NONE;
+	    //this->climate_preset_mode_ = ((data[i].value & 0x0008) == 0x0008) ? climate::CLIMATE_PRESET_ECO : climate::CLIMATE_PRESET_NONE;
+      this->climate_preset_mode_ = gbl_timer_eco_mode;
 		if (this->climate_preset_mode_sensor_ != nullptr)
 			this->climate_preset_mode_sensor_->publish_state(this->climate_preset_mode_);		
 		//ESP_LOGI(TAG, "Device address: 0x%04X 0x%04X - UPONOR_ID_MODE1(0x3E): 0x%04X", this->system_address_, this->address_, data[i].value); 
@@ -148,9 +149,12 @@ void UponorSmatrixSensor::on_device_data(const UponorSmatrixData *data, size_t d
       case UPONOR_ID_TIMER_HEATING_MODE:
         if (this->timer_autocalibration_mode_sensor_ != nullptr)
           this->timer_autocalibration_mode_sensor_->publish_state(data[i].value & 0x0001);
+        
+        gbl_timer_eco_mode = ((data[i].value & 0x0008) == 0x0008) ? ECO_PRESET_ON : ECO_PRESET_OFF;
         if (this->timer_eco_mode_sensor_ != nullptr)
     {
-          this->timer_eco_mode_sensor_->publish_state(((data[i].value & 0x0008) == 0x0008) ? 1 : 0);      
+          this->timer_eco_mode_sensor_->publish_state(((data[i].value & 0x0008) == 0x0008) ? ECO_PRESET_ON : ECO_PRESET_OFF);      
+          
     }
         if (this->timer_vacation_mode_sensor_ != nullptr)
           this->timer_vacation_mode_sensor_->publish_state(data[i].value & 0x0400);

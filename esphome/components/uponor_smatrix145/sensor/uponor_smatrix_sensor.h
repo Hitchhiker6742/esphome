@@ -1,7 +1,6 @@
 #pragma once
 
 #include "esphome/components/sensor/sensor.h"
-#include "esphome/components/climate/climate.h"
 #include "esphome/components/uponor_smatrix145/uponor_smatrix.h"
 #include "esphome/core/component.h"
 
@@ -58,7 +57,7 @@ class UponorSmatrixSensor : public sensor::Sensor, public Component, public Upon
   //uint16_t time_day_;
   //uint16_t time_hour_;
   //uint16_t time_minute_;
-  //uint16_t time_second_;
+  //uint16_t time_second_;  
   
 };
 
