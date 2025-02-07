@@ -43,24 +43,9 @@ climate::ClimateTraits UponorSmatrixClimate::traits() {
   return traits;
 }
 
-void UponorSmatrixClimate::control(const climate::ClimateCall &call) {
-  //ESP_LOGI(TAG, "Control entered");
-  // if (call.get_target_temperature().has_value()) {
-    // this->lastset_target_temperature_raw_ = celsius_to_raw(*call.get_target_temperature());
-    // if (this->preset == climate::CLIMATE_PRESET_ECO) {
-      // // During ECO mode, the thermostat automatically substracts the setback value from the setpoint,
-      // // so we need to add it here first
-      // this->lastset_target_temperature_raw_ += this->eco_setback_value_raw_;
-    // }
-
-    // send_retry_count_ = 0;
-    // // For unknown reasons, we need to send a null setpoint first for the thermostat to react
-    // UponorSmatrixData data[] = {{UPONOR_ID_TARGET_TEMP, 0}, {UPONOR_ID_TARGET_TEMP, lastset_target_temperature_raw_}};
-    // ESP_LOGI(TAG, "Send Data for target temperature");
-	  // this->send(data, sizeof(data) / sizeof(data[0]));
-  // }
+void UponorSmatrixClimate::control(const climate::ClimateCall &call) {  
   // if (call.get_preset().has_value()) {
-	//   ESP_LOGI(TAG, "GetPreset %d", *call.get_preset());  
+	//   ESP_LOGD(TAG, "GetPreset %d", *call.get_preset());  
 	//   this->set_preset_(*call.get_preset());
   //   if (this->last_preset_ != this->preset && this->lastset_target_temperature_ != 0.0f)
   //   {
@@ -70,19 +55,8 @@ void UponorSmatrixClimate::control(const climate::ClimateCall &call) {
   // }
 
   if (call.get_target_temperature().has_value()) {    
-    ESP_LOGI(TAG, "GetTargetTemperature %d", *call.get_target_temperature());  
+    ESP_LOGD(TAG, "GetTargetTemperature %d", *call.get_target_temperature());  
 	  send_data(*call.get_target_temperature(), false);
-    // uint16_t temp = celsius_to_raw(this->lastset_target_temperature_);
-    // if (this->preset == climate::CLIMATE_PRESET_ECO) {
-    //   // During ECO mode, the thermostat automatically substracts the setback value from the setpoint,
-    //   // so we need to add it here first
-    //   //temp += this->eco_setback_value_raw_;
-    // }
-    // this->lastset_target_temperature_raw_ = temp;
-    // send_retry_count_ = 0;
-    // // For unknown reasons, we need to send a null setpoint first for the thermostat to react
-    // UponorSmatrixData data[] = {{UPONOR_ID_TARGET_TEMP, 0}, {UPONOR_ID_TARGET_TEMP, temp}};
-    // this->send(data, sizeof(data) / sizeof(data[0]));
   }
 }
 
