@@ -125,7 +125,16 @@ CONFIG_SCHEMA = cv.typed_schema(
                     accuracy_decimals=1,
                     device_class=DEVICE_CLASS_TEMPERATURE,
                     state_class=STATE_CLASS_MEASUREMENT,
+                ),
+                cv.Optional(CONF_ECO_SETBACK): sensor.sensor_schema(
+                    unit_of_measurement=UNIT_CELSIUS,
+                    accuracy_decimals=1,
+                    device_class=DEVICE_CLASS_TEMPERATURE,
+                    state_class=STATE_CLASS_MEASUREMENT,
                 ),		
+                cv.Optional(CONF_CLIMATE_PRESET_MODE): sensor.sensor_schema(                    
+                    state_class=STATE_CLASS_MEASUREMENT,
+                ),						
             }
         ).extend(UPONOR_SMATRIX_DEVICE_SCHEMA),
         TYPE_T_149: cv.COMPONENT_SCHEMA.extend(

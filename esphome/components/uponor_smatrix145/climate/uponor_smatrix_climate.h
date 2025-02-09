@@ -32,6 +32,7 @@ private:
   void send_data(float temperature, bool retry);
   optional<climate::ClimatePreset> last_preset_;
   uint8_t last_timer_eco_mode = ECO_PRESET_UNDEFINED; //not set
+  bool setTemperatureByController = false;
 };
 
 }  // namespace uponor_smatrix145

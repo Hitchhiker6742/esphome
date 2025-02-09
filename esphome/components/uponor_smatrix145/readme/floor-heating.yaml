@@ -69,44 +69,124 @@ uponor_smatrix145:
 #  time_id: homeassistant_time
 #  time_device_address: 0x2CCC
 
-sensor:
-  # - platform: uponor_smatrix145  
-  #   system_address: 0x1204
-  #   address: 0x2CCC
+text_sensor:
+  - platform: uponor_smatrix145
+    system_address: 0x1204
+    address: 0x2CCC
+    type: I-143 
+    timer_datetime:
+      name: Timer Datetime
+    timer_heating_mode:
+      name: Timer Heating Mode
+    timer_vacation_mode:
+      name: Timer Vacation Mode
+    timer_calibration_mode:
+      name: Timer calibration Mode
 
-  - platform: uponor_smatrix145      
+#  - platform: template
+#    name: Timer Heating Mode
+#    lambda: !lambda |-
+#      if (id(id_eco_mode).state == 1) {
+#        return {"OFF"};
+#      } else {
+#        return {"ON"};
+#      }
+
+#  - platform: template
+#    name: Timer Clock
+#    update_interval: 30s
+#    lambda: !lambda |-
+#      { 
+#        return { str_sprintf("%02.0f.%02.0f.%4.0f %02.0f:%02.0f", id(id_day).state, id(id_month).state, id(id_year).state, id(id_hour).state, id(id_minute).state ) };
+#      }
+
+#  - platform: template
+#    name: Timer Clock 2
+#    update_interval: 30s
+#    lambda: !lambda |-
+#      { 
+#        return { str_sprintf("%02d.%02d.%4d %02d:%02d", ((int)(id(id_timepart2).state) >> 11 & 0x001F), 
+#                  ((int)(id(id_timepart1).state) >> 3 & 0x000F), (((int)(id(id_timepart1).state) >> 7 & 0x007F) + 0x07D0), 
+#                  ((int)(id(id_timepart2).state) >> 6 & 0x001F), ((int)(id(id_timepart2).state) & 0x003F) ) };
+#      }
+
+sensor:
+  - platform: uponor_smatrix145  
+    system_address: 0x1204
+    address: 0x2CCC
+    type: I-143 
+    timer_eco_setback:
+      name: Timer ECO Setback
+    timer_eco_mode:
+      name: Timer ECO Mode
+      id: id_eco_mode
+      # on_value:
+      #   then:          
+      #     - climate.control:              
+      #         id: Thermostat_Wohnzimmer
+      #         preset: !lambda if (x == 1) { return CLIMATE_PRESET_ECO; } else { return CLIMATE_PRESET_NONE; }
+      #     - climate.control:              
+      #         id: Thermostat_Schlafzimmer
+      #         preset: !lambda if (x == 1) { return CLIMATE_PRESET_ECO; } else { return CLIMATE_PRESET_NONE; }
+      #     - climate.control:              
+      #         id: Thermostat_Bad
+      #         preset: !lambda if (x == 1) { return CLIMATE_PRESET_ECO; } else { return CLIMATE_PRESET_NONE; }
+
+  - platform: uponor_smatrix145    
     system_address: 0x1108
     address: 0x497D
+    type: T-149    
     humidity:
       name: Humidity Wohnzimmer
     temperature:
-      name: Temperature Wohnzimmer    
+      name: Temperature Wohnzimmer        
     target_temperature:
       name: Target Temperature Wohnzimmer
+    target_temperature_brutto:
+      name: Target Temperature Wohnzimmer Brutto
+    eco_setback:
+      name: Eco Setback Wohnzimmer
+    climate_preset_mode:
+      name: Climate Preset Wohnzimmer
 
   - platform: uponor_smatrix145
     system_address: 0x110E
     address: 0xB075
+    type: T-149
     humidity:
       name: Humidity Schlafzimmer
     temperature:
       name: Temperature Schlafzimmer
     target_temperature:
       name: Target Temperature Schlafzimmer
+    target_temperature_brutto:
+      name: Target Temperature Schlafzimmer Brutto
+    eco_setback:
+      name: Eco Setback Schlafzimmer
+    climate_preset_mode:
+      name: Climate Preset Schlafzimmer
   
   - platform: uponor_smatrix145
     system_address: 0x110E
     address: 0xB09E
+    type: T-149
     humidity:
       name: Humidity Bad
     temperature:
       name: Temperature Bad
     target_temperature:
       name: Target Temperature Bad
+    target_temperature_brutto:
+      name: Target Temperature Bad Brutto
+    eco_setback:
+      name: Eco Setback Bad
+    climate_preset_mode:
+      name: Climate Preset Bad
 
   - platform: uponor_smatrix145  
     system_address: 0x1004
     address: 0x45F1
+    type: T-144
     temperature:
       name: Temperature Küche
     target_temperature:
@@ -115,6 +195,7 @@ sensor:
   - platform: uponor_smatrix145
     system_address: 0x1004
     address: 0x45E8
+    type: T-144
     temperature:
       name: Temperature Computerzimmer
     target_temperature:
@@ -123,6 +204,7 @@ sensor:
   - platform: uponor_smatrix145
     system_address: 0x1004
     address: 0x45EF
+    type: T-144
     temperature:
       name: Temperature Flur
     target_temperature:
@@ -132,17 +214,20 @@ climate:
   - platform: uponor_smatrix145  
     system_address: 0x1108
     address: 0x497D
-    name: Thermostat Wohnzimmer    
+    name: Thermostat Wohnzimmer
+    id: Thermostat_Wohnzimmer
 
   - platform: uponor_smatrix145
     system_address: 0x110E
     address: 0xB075
     name: Thermostat Schlafzimmer
+    id: Thermostat_Schlafzimmer
   
   - platform: uponor_smatrix145
     system_address: 0x110E
     address: 0xB09E
     name: Thermostat Bad
+    id: Thermostat_Bad
 
   # - platform: uponor_smatrix145  
   #   system_address: 0x1004

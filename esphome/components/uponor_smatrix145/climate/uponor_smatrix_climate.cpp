@@ -50,17 +50,17 @@ void UponorSmatrixClimate::control(const climate::ClimateCall &call) {
   //   if (this->last_preset_ != this->preset && this->lastset_target_temperature_ != 0.0f)
   //   {
   //     this->last_preset_ = this->preset;
-  //     send_data(this->lastset_target_temperature_, false);
+  //     send_data(this->lastset_target_temperature_, true);
   //   }
   // }
 
   if (call.get_target_temperature().has_value()) {    
     ESP_LOGD(TAG, "GetTargetTemperature %d", *call.get_target_temperature());  
-	  send_data(*call.get_target_temperature(), false);
+	  send_data(*call.get_target_temperature(), true);
   }
 }
 
-void UponorSmatrixClimate::send_data(float temperature, bool retry = false)
+void UponorSmatrixClimate::send_data(float temperature, bool setByController = false)
 {
   ESP_LOGI(TAG, "Send Temperature %f", temperature);  
   this->lastset_target_temperature_ = temperature;
@@ -74,8 +74,22 @@ void UponorSmatrixClimate::send_data(float temperature, bool retry = false)
   }
   this->lastset_target_temperature_raw_ = temp;
   
-  if (!retry) send_retry_count_ = 0;
-  
+  if (setByController)       
+  {
+    send_retry_count_ = 0;
+    this->setTemperatureByController = true;
+  }
+  else
+  {
+    ESP_LOGI(TAG, "Send Data for target temperature again %f (temp) != %f (target)", temp, this->lastset_target_temperature_);
+    this->send_retry_count_++;
+    ESP_LOGI(TAG, "Send Data for target temperature again %d of %d", this->send_retry_count_, SEND_RETRY_MAX);
+    if (this->send_retry_count_ >= SEND_RETRY_MAX)
+    {
+      this->setTemperatureByController = false;
+    }
+  }
+
   // For unknown reasons, we need to send a null setpoint first for the thermostat to react
   UponorSmatrixData data[] = {{UPONOR_ID_TARGET_TEMP, 0}, {UPONOR_ID_TARGET_TEMP, temp}};
   this->send(data, sizeof(data) / sizeof(data[0]));
@@ -104,12 +118,15 @@ void UponorSmatrixClimate::on_device_data(const UponorSmatrixData *data, size_t 
           //Set if never was set by control to device value
           if (this->lastset_target_temperature_ == 0.0f) this->lastset_target_temperature_ = temp;
           
-          if (temp != this->lastset_target_temperature_ && this->send_retry_count_ < SEND_RETRY_MAX) 
+          //Retry if not set correct
+          if (this->setTemperatureByController && temp != this->lastset_target_temperature_) 
           {
-            ESP_LOGI(TAG, "Send Data for target temperature again %f (temp) != %f (target)", temp, this->lastset_target_temperature_);
-            this->send_retry_count_++;
-            ESP_LOGI(TAG, "Send Data for target temperature again %d of %d", this->send_retry_count_, SEND_RETRY_MAX);
-            send_data(this->lastset_target_temperature_, true);
+            send_data(this->lastset_target_temperature_, false);
+          }
+          else
+          {
+            //Dont retry again
+            this->setTemperatureByController = false;
           }
         }
         break;
