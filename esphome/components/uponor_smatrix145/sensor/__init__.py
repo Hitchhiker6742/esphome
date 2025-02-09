@@ -114,6 +114,12 @@ CONFIG_SCHEMA = cv.typed_schema(
                     device_class=DEVICE_CLASS_TEMPERATURE,
                     state_class=STATE_CLASS_MEASUREMENT,
                 ),		
+                cv.Optional(CONF_TARGET_TEMPERATURE_BRUTTO): sensor.sensor_schema(
+                    unit_of_measurement=UNIT_CELSIUS,
+                    accuracy_decimals=1,
+                    device_class=DEVICE_CLASS_TEMPERATURE,
+                    state_class=STATE_CLASS_MEASUREMENT,
+                ),
                 cv.Optional(CONF_TARGET_TEMPERATURE_LOW): sensor.sensor_schema(
                     unit_of_measurement=UNIT_CELSIUS,
                     accuracy_decimals=1,
@@ -169,7 +175,7 @@ CONFIG_SCHEMA = cv.typed_schema(
                     accuracy_decimals=1,
                     device_class=DEVICE_CLASS_TEMPERATURE,
                     state_class=STATE_CLASS_MEASUREMENT,
-                ),		
+                ),
                 cv.Optional(CONF_TARGET_TEMPERATURE_LOW): sensor.sensor_schema(
                     unit_of_measurement=UNIT_CELSIUS,
                     accuracy_decimals=1,
@@ -241,12 +247,21 @@ async def to_code(config):
         if target_temperature_config := config.get(CONF_TARGET_TEMPERATURE):
             sens = await sensor.new_sensor(target_temperature_config)
             cg.add(var.set_target_temperature_sensor(sens))
+        if target_temperature_brutto_config := config.get(CONF_TARGET_TEMPERATURE_BRUTTO):
+            sens = await sensor.new_sensor(target_temperature_brutto_config)
+            cg.add(var.set_target_temperature_brutto_sensor(sens))
         if target_temperature_low_config := config.get(CONF_TARGET_TEMPERATURE_LOW):
             sens = await sensor.new_sensor(target_temperature_low_config)
             cg.add(var.set_target_temperature_low_sensor(sens))
         if target_temperature_high_config := config.get(CONF_TARGET_TEMPERATURE_HIGH):
             sens = await sensor.new_sensor(target_temperature_high_config)
             cg.add(var.set_target_temperature_high_sensor(sens))
+        if eco_setback_sensor_config := config.get(CONF_ECO_SETBACK):
+            sens = await sensor.new_sensor(eco_setback_sensor_config)
+            cg.add(var.set_eco_setback_sensor(sens))
+        if climate_preset_mode_config := config.get(CONF_CLIMATE_PRESET_MODE):
+            sens = await sensor.new_sensor(climate_preset_mode_config)
+            cg.add(var.set_climate_preset_mode_sensor(sens))
     if config[CONF_TYPE] == TYPE_T_149:
         if temperature_config := config.get(CONF_TEMPERATURE):
             sens = await sensor.new_sensor(temperature_config)
