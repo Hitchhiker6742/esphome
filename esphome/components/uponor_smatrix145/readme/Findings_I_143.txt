@@ -1,0 +1,44 @@
+08.0C.40.09.65.F5.0A.00.2A.0D.00.5A.32.04.09.03.02.3C
+08 0C 43 09 42 81 0A 00 21 0D 00 5A 32 00 09 03 02 72
+
+08.07.E0.09.FC.85.0A.00.04.0D.00.5A.32.00.01.03.02.3C
+08.07.E0.09.FC.88.0A.00.09.0D.00.5A.32.00.01.03.02.3F
+08.07.E0.09.FC.89.0A.00.36.0D.00.5A.32.00.01.03.02.3C
+
+
+32 00 01 heizen manuell/automatisch (autoabgleich an)
+32 00 09 eco manuell/automatisch (autoabgleich an)
+
+32 00 00 heizen manuell/automatisch (autoabgleich aus)
+32 00 08 eco manuell/automatisch (autoabgleich aus)
+
+32 04 09 Urlaubsmodus
+
+03 02 72 Temp Urlaub 17  0272 -> (626d - 320d)/1,8/ 10 = 17°C
+
+03 02 3D
+03 02 3C Temp Urlaub 14  023C -> (572d - 320d)/1,8/ 10 = 14°C
+
+
+
+
+0D 00 5A eco absenkung 5°C   5A -> 
+0D 00 7E eco absenkung 7°C   7E -> 126d / 1,8 / 10 = 7°C
+
+0D 00 01 eco absenkung 0°C springt aber sofort auf 0D 00 09
+
+0D 00 09 eco absenkung 0.5°C								 -> Minimum
+0D 00 12 eco absenkung 1°C
+0D 00 1B eco absenkung 1.5°C
+
+0D 00 BD eco absenkung 10.5°C BD -> 189 / 1,8 / 10 = 10,5
+0D 00 C6 eco absenkung 11°C   C6 -> 198 / 1,8 / 10 = 11      -> Maximum
+
+pro halbes grad 9d
+
+target min
+37 01 9A                  (410d -320d)/1,8 = 5°C
+target max
+38 03 B6 		  (950d -320d)/1,8 = 35°C
+target
+3B 01 9A		  (410d -320d)/1,8 = 5°C

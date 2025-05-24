@@ -1,0 +1,96 @@
+esphome:
+  name: floor-heating
+  friendly_name: Floor Heating
+  includes:
+    - custom/uponor/uponor_base_device.hpp
+    - custom/uponor/uponor_bus.hpp
+    - custom/uponor/uponor_climate.hpp
+    - custom/uponor/uponor_sensors.hpp
+
+esp32:
+  board: esp32dev
+  framework:
+    type: arduino    
+
+# Enable logging
+logger:
+  baud_rate: 0
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "dYV2JhTMkSGQP6w0hvIgZHiA3pKz+IUd0TXT55WJ+Jw="
+
+ota:
+  - platform: esphome
+    password: "63aea147fde87c978ac0823e9e3c28ce"
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Floor-Heating Fallback Hotspot"
+    password: "PrhK5QtiiUA5"
+
+captive_portal:
+       
+uart:
+  id: uart_bus
+  tx_pin: GPIO17
+  rx_pin: GPIO16
+  baud_rate: 19200
+  data_bits: 8
+  stop_bits: 1
+  parity: NONE
+#  debug:
+#    direction: BOTH
+#    dummy_receiver: false
+#    after:
+#      delimiter: "\n"
+#    sequence:
+#      - lambda: UARTDebug::log_string(direction, bytes);
+
+custom_component:
+  - lambda: |-
+      auto bus = new UponorBus(id(uart_bus));
+      return {bus};    
+    components:
+      - id: uponor_bus
+
+climate:
+  platform: custom
+  lambda: |-
+    auto room_0xB075 = new UponorClimate(0xB075, (UponorBus*) id(uponor_bus));
+    auto room_0xB09E = new UponorClimate(0xB09E, (UponorBus*) id(uponor_bus));
+
+    return {
+      room_0xB075, room_0xB09E
+    };
+  climates:
+    - name: "room_0xB075"
+    - name: "room_0xB09E"
+
+sensor:
+  platform: custom
+  lambda: |-
+    auto room_0xB075 = new UponorSensors(0xB075, (UponorBus*) id(uponor_bus));
+
+    return {
+      room_0xB075->room_temp,room_0xB075->floor_temp,room_0xB075->set_temp,room_0xB075->heating,
+    };
+  sensors:
+    - name: "Cabinet Room Temperature"
+      unit_of_measurement: °C
+      accuracy_decimals: 1
+      device_class: temperature
+    - name: "Cabinet Floor Temperature"
+      unit_of_measurement: °C
+      accuracy_decimals: 1
+      device_class: temperature
+    - name: "Cabinet Set Temperature"
+      unit_of_measurement: °C
+      accuracy_decimals: 1
+      device_class: temperature
+    - name: "Cabinet Heating On"
