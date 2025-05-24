@@ -1,17 +1,17 @@
 import esphome.codegen as cg
-import esphome.config_validation as cv
 from esphome.components import sensor
+import esphome.config_validation as cv
 from esphome.const import (
     CONF_EXTERNAL_TEMPERATURE,
     CONF_HUMIDITY,
+    CONF_ID,
     CONF_TEMPERATURE,
 	CONF_TARGET_TEMPERATURE,
 	CONF_TARGET_TEMPERATURE_LOW,
 	CONF_TARGET_TEMPERATURE_HIGH,	
-    CONF_ID,
     CONF_TYPE,
     DEVICE_CLASS_HUMIDITY,
-    DEVICE_CLASS_TEMPERATURE,	
+    DEVICE_CLASS_TEMPERATURE,
     STATE_CLASS_MEASUREMENT,
 	STATE_CLASS_NONE,
     UNIT_CELSIUS,
@@ -19,10 +19,10 @@ from esphome.const import (
 )
 
 from .. import (
-    uponor_smatrix_ns,
-    UponorSmatrixDevice,
     UPONOR_SMATRIX_DEVICE_SCHEMA,
+    UponorSmatrixDevice,
     register_uponor_smatrix_device,
+    uponor_smatrix_ns,
 )
 
 DEPENDENCIES = ["uponor_smatrix145"]
