@@ -21,7 +21,6 @@ CONFIG_SCHEMA = climate.climate_schema(UponorSmatrixClimate).extend(
     UPONOR_SMATRIX_DEVICE_SCHEMA
 )
 
-
 async def to_code(config):
     var = await climate.new_climate(config)
     await cg.register_component(var, config)

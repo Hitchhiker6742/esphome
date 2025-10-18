@@ -7,8 +7,8 @@ namespace uponor_smatrix145 {
 static const char *const TAG = "uponor_smatrix145.text_sensor";
 
 void UponorSmatrixTextSensor::dump_config() {
-  ESP_LOGCONFIG(TAG, "Uponor Smatrix Text Sensor");
-  ESP_LOGCONFIG(TAG, "  Device address: 0x%04X 0x%04X", this->system_address_, this->address_);
+  ESP_LOGCONFIG(TAG, "Uponor Smatrix Text Sensor\n"
+                     "  Device address: 0x%04X 0x%04X", this->system_address_, this->address_);
   LOG_TEXT_SENSOR("  ", "Datetime", this->timer_datetime_text_sensor_);
   LOG_TEXT_SENSOR("  ", "Auto calibration", this->timer_calibration_mode_text_sensor_);
   LOG_TEXT_SENSOR("  ", "Heating Mode", this->timer_heating_mode_text_sensor_);
@@ -16,7 +16,7 @@ void UponorSmatrixTextSensor::dump_config() {
 }
 
 void UponorSmatrixTextSensor::on_device_data(const UponorSmatrixData *data, size_t data_len) {
-  for (int i = 0; i < data_len; i++) {
+  for (size_t i = 0; i < data_len; i++) {
     switch (data[i].id) {
       // I143
       case UPONOR_ID_DATETIME1:	   

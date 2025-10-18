@@ -99,8 +99,7 @@ class UponorSmatrixComponent : public uart::UARTDevice, public Component {
   std::queue<std::vector<uint8_t>> tx_queue_;
   uint32_t last_rx_;
   uint32_t last_tx_;
-  // uint32_t last_poll_start_;
-
+  
 #ifdef USE_TIME
   time::RealTimeClock *time_id_{nullptr};
   uint16_t time_device_address_;

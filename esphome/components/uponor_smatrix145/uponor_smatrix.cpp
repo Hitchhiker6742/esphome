@@ -1,6 +1,7 @@
 #include "uponor_smatrix.h"
-#include "esphome/core/log.h"
 #include "esphome/core/application.h"
+#include "esphome/core/helpers.h"
+#include "esphome/core/log.h"
 
 namespace esphome {
 namespace uponor_smatrix145 {
@@ -48,13 +49,7 @@ void UponorSmatrixComponent::loop() {
 
   // Read incoming data
   while (this->available()) {
-    // The controller polls devices every 10 seconds, with around 200 ms between devices.
-    // Remember timestamps so we can send our own packets when the bus is expected to be silent.
-    // if (now - this->last_rx_ > 500) {
-    //   this->last_poll_start_ = now;
-    // }
-	
-    // The controller polls devices every 10 seconds in some units or continuously in others with around 200 ms between
+      // The controller polls devices every 10 seconds in some units or continuously in others with around 200 ms between
     // devices. Remember timestamps so we can send our own packets when the bus is expected to be silent.
     this->last_rx_ = now;
 	
@@ -156,7 +151,7 @@ bool UponorSmatrixComponent::parse_byte_(uint8_t byte) {
 
   // Decode packet payload data for easy access
   UponorSmatrixData data[data_len];
-  for (int i = 0; i < data_len; i++) {
+  for (size_t i = 0; i < data_len; i++) {
     data[i].id = packet[(i * 3) + 4];
     data[i].value = encode_uint16(packet[(i * 3) + 5], packet[(i * 3) + 6]);
   }
@@ -169,7 +164,7 @@ bool UponorSmatrixComponent::parse_byte_(uint8_t byte) {
     // thermostat sending both room temperature and time information.
     bool found_temperature = false;
     bool found_time = false;
-    for (int i = 0; i < data_len; i++) {
+    for (size_t i = 0; i < data_len; i++) {
       if (data[i].id == UPONOR_ID_ROOM_TEMP)
         found_temperature = true;
       if (data[i].id == UPONOR_ID_DATETIME1)
@@ -217,7 +212,7 @@ bool UponorSmatrixComponent::send(uint16_t system_address, uint16_t device_addre
   packet.push_back(device_address >> 8);
   packet.push_back(device_address >> 0);
 
-  for (int i = 0; i < data_len; i++) {
+  for (size_t i = 0; i < data_len; i++) {
 	ESP_LOGI(TAG, "id 0x%02X value 0x%04X", data[i].id, data[i].value);	  
     packet.push_back(data[i].id);
     packet.push_back(data[i].value >> 8);
