@@ -8,7 +8,7 @@ static const char *const TAG = "uponor_smatrix145.text_sensor";
 
 void UponorSmatrixTextSensor::dump_config() {
   ESP_LOGCONFIG(TAG, "Uponor Smatrix Text Sensor\n"
-                     "  Device address: 0x%04X 0x%04X", this->system_address_, this->address_);
+                     "  Device address: 0x%08X", this->address_);
   LOG_TEXT_SENSOR("  ", "Datetime", this->timer_datetime_text_sensor_);
   LOG_TEXT_SENSOR("  ", "Auto calibration", this->timer_calibration_mode_text_sensor_);
   LOG_TEXT_SENSOR("  ", "Heating Mode", this->timer_heating_mode_text_sensor_);

@@ -8,7 +8,7 @@ static const char *const TAG = "uponor_smatrix145.sensor";
 
 void UponorSmatrixSensor::dump_config() {
   ESP_LOGCONFIG(TAG, "Uponor Smatrix Sensor\n"
-                     "  Device address: 0x%04X 0x%04X", this->system_address_, this->address_);
+                     "  Device address: 0x%08X", this->address_);
   LOG_SENSOR("  ", "Temperature", this->temperature_sensor_);
   LOG_SENSOR("  ", "External Temperature", this->external_temperature_sensor_);
   LOG_SENSOR("  ", "Humidity", this->humidity_sensor_);
