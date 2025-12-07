@@ -131,8 +131,8 @@ static const uint8_t CMD_FRAME_STATUS = 7;
 static const uint8_t CMD_ERROR_WORD = 8;
 static const uint8_t ENERGY_SENSOR_START = 9;
 static const uint8_t CALIBRATE_REPORT_INTERVAL = 4;
-static const std::string OP_NORMAL_MODE_STRING = "Normal";
-static const std::string OP_SIMPLE_MODE_STRING = "Simple";
+static const char *const OP_NORMAL_MODE_STRING = "Normal";
+static const char *const OP_SIMPLE_MODE_STRING = "Simple";
 
 // Memory-efficient lookup tables
 struct StringToUint8 {
@@ -174,7 +174,7 @@ static uint8_t calc_checksum(void *data, size_t size) {
 static int get_firmware_int(const char *version_string) {
   std::string version_str = version_string;
   if (version_str[0] == 'v') {
-    version_str = version_str.substr(1);
+    version_str.erase(0, 1);
   }
   version_str.erase(remove(version_str.begin(), version_str.end(), '.'), version_str.end());
   int version_integer = stoi(version_str);
@@ -205,8 +205,10 @@ void LD2420Component::dump_config() {
   LOG_BUTTON("  ", "Factory Reset:", this->factory_reset_button_);
   LOG_BUTTON("  ", "Restart Module:", this->restart_module_button_);
 #endif
+#ifdef USE_SELECT
   ESP_LOGCONFIG(TAG, "Select:");
   LOG_SELECT("  ", "Operating Mode", this->operating_selector_);
+#endif
   if (ld2420::get_firmware_int(this->firmware_ver_) < CALIBRATE_VERSION_MIN) {
     ESP_LOGW(TAG, "Firmware version %s and older supports Simple Mode only", this->firmware_ver_);
   }
@@ -238,12 +240,20 @@ void LD2420Component::setup() {
   memcpy(&this->new_config, &this->current_config, sizeof(this->current_config));
   if (ld2420::get_firmware_int(this->firmware_ver_) < CALIBRATE_VERSION_MIN) {
     this->set_operating_mode(OP_SIMPLE_MODE_STRING);
-    this->operating_selector_->publish_state(OP_SIMPLE_MODE_STRING);
+#ifdef USE_SELECT
+    if (this->operating_selector_ != nullptr) {
+      this->operating_selector_->publish_state(OP_SIMPLE_MODE_STRING);
+    }
+#endif
     this->set_mode_(CMD_SYSTEM_MODE_SIMPLE);
     ESP_LOGW(TAG, "Firmware version %s and older supports Simple Mode only", this->firmware_ver_);
   } else {
     this->set_mode_(CMD_SYSTEM_MODE_ENERGY);
-    this->operating_selector_->publish_state(OP_NORMAL_MODE_STRING);
+#ifdef USE_SELECT
+    if (this->operating_selector_ != nullptr) {
+      this->operating_selector_->publish_state(OP_NORMAL_MODE_STRING);
+    }
+#endif
   }
 #ifdef USE_NUMBER
   this->init_gate_config_numbers();
@@ -379,12 +389,16 @@ void LD2420Component::report_gate_data() {
   ESP_LOGI(TAG, "Total samples: %d", this->total_sample_number_counter);
 }
 
-void LD2420Component::set_operating_mode(const std::string &state) {
+void LD2420Component::set_operating_mode(const char *state) {
   // If unsupported firmware ignore mode select
   if (ld2420::get_firmware_int(firmware_ver_) >= CALIBRATE_VERSION_MIN) {
     this->current_operating_mode = find_uint8(OP_MODE_BY_STR, state);
-    // Entering Auto Calibrate we need to clear the privoiuos data collection
-    this->operating_selector_->publish_state(state);
+    // Entering Auto Calibrate we need to clear the previous data collection
+#ifdef USE_SELECT
+    if (this->operating_selector_ != nullptr) {
+      this->operating_selector_->publish_state(state);
+    }
+#endif
     if (current_operating_mode == OP_CALIBRATE_MODE) {
       this->set_calibration_(true);
       for (uint8_t gate = 0; gate < TOTAL_GATES; gate++) {
@@ -404,7 +418,11 @@ void LD2420Component::set_operating_mode(const std::string &state) {
     }
   } else {
     this->current_operating_mode = OP_SIMPLE_MODE;
-    this->operating_selector_->publish_state(OP_SIMPLE_MODE_STRING);
+#ifdef USE_SELECT
+    if (this->operating_selector_ != nullptr) {
+      this->operating_selector_->publish_state(OP_SIMPLE_MODE_STRING);
+    }
+#endif
   }
 }
 
